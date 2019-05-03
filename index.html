@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MI SPA</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+
+</head>
+<body>
+
+
+
+<div id="app" class="container ">
+	
+<nav class="navbar navbar-expand-lg navbar-light bg-light">  
+
+<a href="/" class="navbar-brand"> VUEJS </a>
+
+<ul class="navbar-nav">
+	
+<li class="nav-item">
+	
+<router-link to="/" class="nav-link">
+INICIO
+</router-link>
+
+</li>
+
+<li class="nav-item">
+<router-link to="/sobre-nosotros" class="nav-link">	
+SOBRE NOSOTROS
+</router-link>
+
+</li>
+
+<li class="nav-item">
+	
+<router-link to="/contactos"  class="nav-link">
+CONTACTOS
+</router-link>
+
+</li>
+
+
+
+
+
+
+
+
+
+</ul>
+</nav>
+<hr>
+
+<router-view>
+
+</router-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+<script>
+	
+
+const  Inicio   = { template: '<h2> PAGINA INICIO</h2>'}
+const  Sobre    =   { template: '<h2>PAGINA SOBRE NOSOTROS</h2>'}
+const  Contacto    =   { template: '<h2>PAGINA CONTACTOS</h2>'}
+
+
+
+
+
+const routes= [
+
+{path: '/', component : Inicio},
+{path: '/sobre-nosotros', component : Sobre},
+{path: '/contactos', component :Contacto},
+
+]
+
+const router = new VueRouter({
+routes
+})
+
+
+new Vue ( {
+
+router,
+el:'#app'
+
+
+
+
+})
+
+
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
